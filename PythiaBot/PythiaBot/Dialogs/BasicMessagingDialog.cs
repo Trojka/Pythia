@@ -6,7 +6,7 @@ using Microsoft.Bot.Connector;
 namespace PythiaBot.Dialogs
 {
     [Serializable]
-    public class RootDialog : IDialog<object>
+    public class BasicMessagingDialog : IDialog<object>
     {
         public Task StartAsync(IDialogContext context)
         {
@@ -19,13 +19,15 @@ namespace PythiaBot.Dialogs
         {
             var activity = await result as Activity;
 
-            // calculate something for us to return
-            int length = (activity.Text ?? string.Empty).Length;
-
-            // return our reply to the user
-            await context.PostAsync($"You sent {activity.Text} which was {length} characters");
-
+            await context.PostAsync(GetAnswer(activity.Text));
             context.Wait(MessageReceivedAsync);
+        }
+
+        private string GetAnswer(string messageText)
+        {
+            int length = (messageText ?? string.Empty).Length;
+
+            return $"You sent <{messageText}> which was {length} characters";
         }
     }
 }
