@@ -19,10 +19,18 @@ namespace PythiaBot.Dialogs
         {
             var activity = await result as Activity;
 
-            await context.PostAsync(GetAnswer(activity.Text));
+            // Following is a helper method which creates a message and fills the Text property
+            //await context.PostAsync(GetAnswer(activity.Text));
+            var message = context.MakeMessage();
+            message.Text = GetAnswer(activity.Text);
+            await context.PostAsync(message);
+
             context.Wait(MessageReceivedAsync);
         }
 
+        // With basic question and answer type dialog we need to do some kind of parsing of the message
+        //  and then formulate an answer back to the user.
+        // The parsing of the message and the formulation of the answer you will need to do yourself.
         private string GetAnswer(string messageText)
         {
             int length = (messageText ?? string.Empty).Length;
