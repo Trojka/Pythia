@@ -18,7 +18,7 @@ namespace PythiaBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.BasicMessagingDialog());
+                await Conversation.SendAsync(activity, () => new Dialogs.StateSavingMessagingDialog());
             }
             else
             {
