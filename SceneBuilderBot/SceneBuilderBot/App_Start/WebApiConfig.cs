@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace PythiaBot
+namespace SceneBuilderBot
 {
     public static class WebApiConfig
     {
