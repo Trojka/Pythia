@@ -7,7 +7,7 @@ using Microsoft.Bot.Connector;
 namespace SceneBuilderBot.Dialogs
 {
     [Serializable]
-    public class StateSavingMessagingDialog : IDialog<object>
+    public class RootDialog : IDialog<object>
     {
         private bool userWelcomed;
         private string userId;

@@ -18,7 +18,7 @@ namespace SceneBuilderBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.StateSavingMessagingDialog());
+                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
             {
@@ -48,7 +48,7 @@ namespace SceneBuilderBot
             }
             else if (message.Type == ActivityTypes.Typing)
             {
-                // Handle knowing tha the user is typing
+                // Handle knowing that the user is typing
             }
             else if (message.Type == ActivityTypes.Ping)
             {
