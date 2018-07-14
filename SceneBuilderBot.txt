@@ -1,0 +1,61 @@
+﻿Scene Builder Bot
+=======================
+This is currently about version 3.15.3
+
+What is it?
+***********
+This is what Microsoft says: (https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/04/05/what-is-microsoft-bot-framework-overview/)
+
+<qoute>
+The Microsoft Bot Framework provides just what you need to build and connect intelligent bots that interact naturally wherever your users are talking, from text/sms to Skype, Slack, Office 365 mail and other popular services
+</qoute>
+
+
+What does it do?
+***********
+It basically is an abstraction above some popular messaging services, so that they can be used from a single codebase.
+
+
+
+
+What does it NOT do?
+***********
+It does not provide language understanding or any parsing of the messages send to and by the bot.
+
+
+Enkele losse onderwerpen:
+=========================
+opslaan van data
+afbeeldingen terugzenden / animated gifs
+session management
+
+
+
+
+What do we do
+=============
+We'll build a bot which will enable you to create a 3D scene.
+
+Supported sentences in Q&A format
+*********************************
+Q: What would you ike to do
+A:	Create
+	Continue / Update / Open
+	Manage (beheren van bestaande scenes)
+		> Delete
+		> Rename
+Q: What is the central object in the scene
+A:	Person/Man/Woman
+	House
+	Car
+
+
+Free commands
+*************
+Save
+Undo
+Redo
+
+
+
+
