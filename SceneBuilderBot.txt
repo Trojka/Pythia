@@ -1,0 +1,94 @@
+﻿Scene Builder Bot
+=======================
+This is currently about version 3.15.3
+
+interesting links
+*****************
+Channel Inspector: get a preview on how a certain feature looks like in the various available bots (Skype, Facebook, atc...)
+	https://docs.botframework.com/en-us/channel-inspector/channels/Skype/ 
+
+What is it?
+***********
+This is what Microsoft says: (https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/04/05/what-is-microsoft-bot-framework-overview/)
+
+<qoute>
+The Microsoft Bot Framework provides just what you need to build and connect intelligent bots that interact naturally wherever your users are talking, from text/sms to Skype, Slack, Office 365 mail and other popular services
+</qoute>
+
+
+What does it do?
+***********
+It basically is an abstraction above some popular messaging services, so that they can be used from a single codebase.
+
+
+
+
+What does it NOT do?
+***********
+It does not provide language understanding or any parsing of the messages send to and by the bot.
+
+
+Enkele losse onderwerpen:
+=========================
+opslaan van data (kan dit via de State API / Custom State API ?)
+	via de State API	
+		- context.UserData 					> data for user
+		- context.ConversationData			> data for conversation
+		- context.PrivateConversationData	> data for user in context of some conversation
+	via Custom State API
+		- wordt "gewoon" opgeslaan in een locale DocumentDb
+afbeeldingen terugzenden / animated gifs (via rich cards?)
+session management
+
+
+
+
+What do we do
+=============
+We'll build a bot which will enable you to create a 3D scene.
+
+Supported sentences in B(ot)&R(esponse) / C(ommand) format
+*********************************************
+B: What would you like to do?
+R:	Create a New scene
+		B: How would you like theh scene to be named?
+		R:	<the name of hte scene>
+		on duplicate name
+			B: You have already have a scene with this name. Would you like to overwrite it?
+			R:	Yes / No / Open it
+	Continue with / Update the / Open the Existing scene <scene name>
+		on non existing scene
+			B: There is no scene with such name. Would you like to create it or get an overview of existing scenes?
+			R:	Create it / get an Overview
+			on overview
+				B: (provide overview of existing scenes)
+	Manage (beheren van bestaande scenes)
+		> Delete the scene <scene name>
+		> Delete a scene
+			B: provide a list of the scenes
+		> Rename scene <old scenename> to <new scenename>
+		> Copy / Duplicate <old scenename> to <new scenename>
+		> Overview / Available / Summary of available scenes
+			B: (provide overview of existing scenes)
+B: What is the central object in the scene
+R:	what are my Options?
+	Person/Man/Woman
+	House
+	Car
+		on not supported option
+			That object is not supported. Try again.
+C: Show scene (animated gif)
+C: Show main views (carousel card with front, side , top and angled view)
+
+
+Free commands (via global message handlers?)
+*************
+Save
+Undo
+Redo
+Help / What Can I Do?
+Log Off / Log Out
+
+
+
+
