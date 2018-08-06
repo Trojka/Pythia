@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneBuilderBot", "SceneBuilderBot\SceneBuilderBot.csproj", "{59186A84-EADE-435F-AE4D-1536F3FD8428}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneBuilderBot.Logic", "SceneBuilderBot.Logic\SceneBuilderBot.Logic.csproj", "{1B8CB188-7240-4567-9AD0-072D8C034F6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SceneBuilderBot.Logic", "SceneBuilderBot.Logic\SceneBuilderBot.Logic.csproj", "{1B8CB188-7240-4567-9AD0-072D8C034F6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SceneBuilderBot.Services", "SceneBuilderBot.Services\SceneBuilderBot.Services.csproj", "{959C3BA7-9915-4F54-9BD7-AC12994F984D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1B8CB188-7240-4567-9AD0-072D8C034F6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B8CB188-7240-4567-9AD0-072D8C034F6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B8CB188-7240-4567-9AD0-072D8C034F6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959C3BA7-9915-4F54-9BD7-AC12994F984D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959C3BA7-9915-4F54-9BD7-AC12994F984D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959C3BA7-9915-4F54-9BD7-AC12994F984D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959C3BA7-9915-4F54-9BD7-AC12994F984D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

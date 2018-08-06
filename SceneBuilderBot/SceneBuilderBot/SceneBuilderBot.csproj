@@ -149,6 +149,10 @@
       <Project>{1b8cb188-7240-4567-9ad0-072d8c034f6f}</Project>
       <Name>SceneBuilderBot.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SceneBuilderBot.Services\SceneBuilderBot.Services.csproj">
+      <Project>{959c3ba7-9915-4f54-9bd7-ac12994f984d}</Project>
+      <Name>SceneBuilderBot.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

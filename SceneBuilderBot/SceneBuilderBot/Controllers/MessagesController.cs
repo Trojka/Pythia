@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using SceneBuilderBot.Logic.Conversations;
+using SceneBuilderBot.Services.Repositories;
 
 namespace SceneBuilderBot
 {
@@ -21,10 +23,12 @@ namespace SceneBuilderBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
+                Debug.WriteLine("Process ActivityTypes.Message");
                 await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
             }
             else
             {
+                Debug.WriteLine("Process all other");
                 HandleSystemMessage(activity);
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
@@ -48,12 +52,17 @@ namespace SceneBuilderBot
                 // Not available in all channels
 
                 IConversationUpdateActivity update = message;
-                if(update.MembersAdded != null && update.MembersAdded.Any()) {
+                if (update.MembersAdded != null && update.MembersAdded.Any()) {
+                    Debug.WriteLine($"MessagesController.HandleSystemMessage > ConversationUpdate > ServiceUrl: {message.ServiceUrl}");
                     var client = new ConnectorClient(new Uri(message.ServiceUrl), new MicrosoftAppCredentials());
                     foreach(var newMember in update.MembersAdded) {
                         if (newMember.Id != message.Recipient.Id) {
                             var reply = message.CreateReply();
-                            reply.Text = $"Welcome {newMember.Name}!";
+                            var userRepository = InMemoryUserRepository.Create();
+                            if(!userRepository.UserExists(newMember.Id))
+                                reply.Text = BotAnswers.WelcomeMessageForNewUser(newMember.Name);
+                            else
+                                reply.Text = BotAnswers.WelcomeMessageForKnownUser(newMember.Name);
                             client.Conversations.ReplyToActivityAsync(reply);
                         }
                     }
