@@ -126,8 +126,9 @@
     <Compile Include="Dialogs\ConversationKeySentences.cs" />
     <Compile Include="Dialogs\ConversationMessages.cs" />
     <Compile Include="Dialogs\ConversationStorageKeys.cs" />
-    <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Dialogs\UnknownUserRootDialog.cs" />
     <Compile Include="Dialogs\UserDialog.cs" />
+    <Compile Include="Dialogs\UserStorageKeys.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

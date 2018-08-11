@@ -5,6 +5,7 @@ using System.Text;
 namespace SceneBuilderBot.Services.Repositories
 {
     public interface IUserRepository {
-        bool UserExists(string id);
+        bool ChannelUserExists(string id);
+        string RegisterChannelUser(string channelUserId, string name);
     }
 }
